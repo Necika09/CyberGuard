@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Novosti i blogovi | CyberGuard Solutions</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header>
+    <div class="header-container">
+      <a href="index.html" class="logo-link">
+        <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
+        <span>Cyber<span class="logo-highlight">Guard</span></span>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="o-nama.html">O nama</a></li>
+          <li><a href="strucnjaci.html">Zaposleni stručnjaci</a></li>
+          <li><a href="novosti.html" class="active">Novosti i blogovi stručnjaka</a></li>
+          <li><a href="misija-vizija.html">Misija i vizija tvrtke</a></li>
+          <li><a href="cjenik.html">Cjenovnik usluga</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h1 class="section-title">Novosti i stručni blogovi</h1>
+    <p class="section-subtitle">Analize najnovijih ranjivosti, prijetnji i savjeti za bolju obranu</p>
+
+    <div class="grid-container">
+      <article class="card">
+        <h3>Kako prepoznati ciljane Phishing napade nove generacije</h3>
+        <p><small style="color: var(--accent-cyan);">Objavljeno: 10. rujna 2026. | Autor: Marko Kovačević</small></p>
+        <br>
+        <p>Napadači sve češće koriste napredne jezične modele za izradu savršeno prilagođenih e-mail poruka. Saznajte kako educirati zaposlenike i prepoznati zamke.</p>
+      </article>
+
+      <article class="card">
+        <h3>Priprema za implementaciju NIS2 direktive u RH</h3>
+        <p><small style="color: var(--accent-cyan);">Objavljeno: 28. kolovoza 2026. | Autor: Ana Babić</small></p>
+        <br>
+        <p>Europska regulativa donosi strože zahtjeve za kibernetičku otpornost ključnih i važnih subjekata. Donosimo korak-po-korak kontrolnu listu.</p>
+      </article>
+
+      <article class="card">
+        <h3>5 ključnih postavki za zaštitu poslužitelja u oblaku</h3>
+        <p><small style="color: var(--accent-cyan);">Objavljeno: 15. kolovoza 2026. | Autor: Luka Novak</small></p>
+        <br>
+        <p>Pogrešne konfiguracije IAM uloga i javno dostupni spremnici podataka i dalje su najčešći uzrok curenja informacija. Evo kako ih osigurati.</p>
+      </article>
+    </div>
+
+    <!-- Kontakt forma prije podnožja -->
+    <section class="form-section">
+      <h2 class="section-title">Predložite temu za blog</h2>
+      <p class="section-subtitle">Zanima vas specifična sigurnosna tema? Pošaljite nam prijedlog.</p>
+      <form class="contact-form">
+        <div class="form-group">
+          <label for="name">Ime:</label>
+          <input type="text" id="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Prijedlog teme:</label>
+          <textarea id="message" rows="3" required></textarea>
+        </div>
+        <button type="submit" class="btn">Pošalji prijedlog</button>
+      </form>
+    </section>
+  </main>
+
+    <!-- Podnožje -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-col">
+        <h4>CyberGuard Solutions</h4>
+        <p>Vodeća tvrtka za kibernetičku sigurnost i zaštitu digitalne imovine.</p>
+        <p style="margin-top: 0.5rem;">
+          <strong>Adresa:</strong> Gundulićeva 14, 43500 Daruvar (Tehnička škola Daruvar)
+        </p>
+        <div class="footer-map-container">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2791.671725464257!2d17.21841251270514!3d45.597143570955886!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476798b3c16f69d3%3A0x9ad0d9698a09a02!2sTehni%C4%8Dka%20%C5%A1kola%20Daruvar!5e0!3m2!1shr!2shr!4v1789415130025!5m2!1shr!2shr" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Pratite nas</h4>
+        <p>
+          <a href="https://www.instagram.com/tsd_daruvar/" target="_blank" rel="noopener noreferrer">
+            📷 Instagram: @tsd_daruvar
+          </a>
+        </p>
+        <p>
+          <a href="https://www.facebook.com/tsdaruvar/" target="_blank" rel="noopener noreferrer">
+            📘 Facebook: Tehnička škola Daruvar
+          </a>
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Newsletter</h4>
+        <p>Pretplatite se na mjesečni sigurnosni bilten i analize prijetnji:</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Vaš email..." required>
+          <button type="submit" class="btn">Prijava</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 CyberGuard Solutions d.o.o. Sva prava pridržana.</p>
+    </div>
+  </footer>
+
+
+  <aside id="cookie-banner" class="cookie-banner">
+    <h4>Obavijest o kolačićima</h4>
+    <p>Ova web stranica koristi kolačiće za pružanje najboljeg korisničkog iskustva.</p>
+    <div class="cookie-actions">
+      <button id="accept-cookies" class="btn">Prihvaćam</button>
+    </div>
+  </aside>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
