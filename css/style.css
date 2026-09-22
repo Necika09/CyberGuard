@@ -1,0 +1,534 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Meka hladna paleta (umjesto blještave bijele) */
+  --bg-page: #f1f5f9;              /* Ugodna tehnička slate podloga */
+  --bg-surface: #ffffff;           /* Čisti paneli za sadržaj */
+  --bg-surface-subtle: #e2e8f0;    /* Sekundarni elementi i polja */
+  --bg-dark: #0a1322;              /* Duboka tamnoplava za podnožje */
+
+  /* Brend boje usklađene s novim logotipom */
+  --brand-navy: #0b2545;
+  --brand-blue: #0969da;
+  --brand-cyan: #0099cc;
+  --brand-hover: #0550ae;
+
+  /* Tipografija i tekst */
+  --text-main: #0f172a;
+  --text-body: #334155;
+  --text-muted: #64748b;
+  --text-light: #ffffff;
+  --text-light-muted: #94a3b8;
+
+  /* Obrubi */
+  --border-color: #cbd5e1;
+  --border-subtle: #e2e8f0;
+
+  --font-sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'IBM Plex Mono', Consolas, monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 1. Header i navigacija */
+header {
+  background-color: var(--bg-surface);
+  border-bottom: 2px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
+}
+
+.header-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1.5rem;
+  height: 4.2rem;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  text-decoration: none;
+  color: var(--brand-navy);
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: -0.3px;
+}
+
+.site-logo {
+  width: 34px;
+  height: 38px;
+  display: block;
+  object-fit: contain;
+}
+
+.logo-link svg {
+  width: 28px;
+  height: 28px;
+  fill: var(--brand-blue);
+}
+
+.logo-highlight {
+  color: var(--brand-blue);
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  height: 4.2rem;
+  gap: 0.25rem;
+}
+
+nav a {
+  display: inline-flex;
+  align-items: center;
+  height: 100%;
+  text-decoration: none;
+  color: var(--text-body);
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0 1rem;
+  border-bottom: 3px solid transparent;
+  transition: all 0.2s ease;
+}
+
+nav a:hover {
+  color: var(--brand-blue);
+  background-color: rgba(9, 105, 218, 0.05);
+}
+
+nav a.active {
+  color: var(--brand-blue);
+  border-bottom-color: var(--brand-blue);
+  background-color: rgba(9, 105, 218, 0.06);
+}
+
+/* 2. Glavni raspored */
+main {
+  flex: 1;
+  max-width: 1240px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+.section-title {
+  font-size: 2.1rem;
+  font-weight: 700;
+  color: var(--brand-navy);
+  letter-spacing: -0.5px;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.section-title::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 1.8rem;
+  background-color: var(--brand-blue);
+}
+
+.section-subtitle {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  margin-top: 0.35rem;
+  margin-bottom: 2.5rem;
+}
+
+/* 3. Hero sekcija - dinamična s mekom plavkastom pozadinom */
+.hero {
+  background: linear-gradient(135deg, #0b2545 0%, #103460 100%);
+  color: #ffffff;
+  padding: 4rem 3rem;
+  margin-bottom: 3.5rem;
+  border-left: 6px solid var(--brand-cyan);
+  box-shadow: 0 10px 25px rgba(11, 37, 69, 0.15);
+  position: relative;
+}
+
+.hero::before {
+  content: "CYBER SECURITY DIVISION";
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  color: var(--brand-cyan);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.hero h1 {
+  font-size: 2.7rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.8px;
+  color: #ffffff;
+}
+
+.hero p {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: #cbd5e1;
+  max-width: 780px;
+  margin-bottom: 2rem;
+}
+
+/* 4. Gumbi */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  background-color: var(--brand-blue);
+  color: #ffffff;
+  padding: 0.85rem 1.6rem;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.92rem;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(9, 105, 218, 0.25);
+  transition: all 0.2s ease;
+}
+
+.btn::after {
+  content: "→";
+  font-family: var(--font-mono);
+  font-weight: bold;
+}
+
+.btn:hover {
+  background-color: var(--brand-hover);
+  box-shadow: 0 6px 16px rgba(9, 105, 218, 0.35);
+  transform: translateY(-1px);
+}
+
+/* 5. Kartice - čisti bijeli paneli na slate pozadini s plavim vrhom */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3.5rem;
+}
+
+.card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-top: 3px solid var(--brand-blue);
+  padding: 2.25rem 2rem;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-top-color 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  border-top-color: var(--brand-cyan);
+  box-shadow: 0 10px 20px rgba(15, 23, 42, 0.08);
+}
+
+.card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--brand-navy);
+  margin-bottom: 0.75rem;
+}
+
+.card p {
+  color: var(--text-body);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.card small {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--brand-blue) !important;
+  font-weight: 600;
+}
+
+/* 6. Forme */
+.form-section {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--brand-navy);
+  padding: 2.75rem 2.25rem;
+  margin-bottom: 3.5rem;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
+}
+
+.contact-form {
+  display: grid;
+  gap: 1.25rem;
+  max-width: 650px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--brand-navy);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-family: var(--font-mono);
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  background-color: #f8fafc;
+  border: 1px solid var(--border-color);
+  border-bottom: 2px solid var(--brand-navy);
+  padding: 0.85rem 1rem;
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  background-color: #ffffff;
+  border-color: var(--brand-blue);
+  border-bottom-color: var(--brand-blue);
+  box-shadow: 0 0 0 3px rgba(9, 105, 218, 0.12);
+}
+
+/* 7. Cjenik kartice */
+.price-card {
+  border-top: 4px solid var(--brand-navy);
+}
+
+.price-card:hover {
+  border-top-color: var(--brand-blue);
+}
+
+.price-tag {
+  font-size: 2.3rem;
+  font-weight: 700;
+  color: var(--brand-navy);
+  margin: 1.25rem 0;
+  font-family: var(--font-mono);
+}
+
+.price-card ul {
+  list-style: none;
+  margin: 1.5rem 0 2rem;
+  flex: 1;
+}
+
+.price-card li {
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--border-subtle);
+  color: var(--text-body);
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.price-card li::before {
+  content: "✔";
+  color: var(--brand-blue);
+  font-size: 0.85rem;
+}
+
+/* 8. Karta */
+.map-container,
+.footer-map-container {
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+  margin-top: 0.75rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.map-container iframe {
+  width: 100% !important;
+  height: 380px !important;
+  display: block;
+}
+
+.footer-map-container iframe {
+  width: 100% !important;
+  height: 160px !important;
+  display: block;
+}
+
+/* 9. Podnožje - tamnoplavo, autoritativno */
+footer {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  padding: 4rem 1.5rem 2rem;
+  margin-top: auto;
+  border-top: 3px solid var(--brand-blue);
+}
+
+.footer-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.footer-col h4 {
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: var(--font-mono);
+  margin-bottom: 1.25rem;
+}
+
+.footer-col p,
+.footer-col a {
+  color: var(--text-light-muted);
+  font-size: 0.9rem;
+  text-decoration: none;
+  line-height: 1.8;
+  transition: color 0.15s ease;
+}
+
+.footer-col a:hover {
+  color: var(--brand-cyan);
+  text-decoration: underline;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 0;
+  margin-top: 1rem;
+}
+
+.newsletter-form input {
+  background-color: #162438;
+  border: 1px solid #2a3c58;
+  padding: 0.75rem 1rem;
+  color: #ffffff;
+  flex: 1;
+  font-size: 0.9rem;
+}
+
+.newsletter-form input:focus {
+  outline: none;
+  border-color: var(--brand-cyan);
+}
+
+.newsletter-form .btn {
+  padding: 0.75rem 1.25rem;
+  box-shadow: none;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1.5rem;
+  text-align: left;
+  max-width: 1240px;
+  margin: 0 auto;
+  font-size: 0.8rem;
+  color: var(--text-light-muted);
+  font-family: var(--font-mono);
+}
+
+/* 10. Obavijest o kolačićima */
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  max-width: 100%;
+  background-color: var(--bg-dark);
+  color: #ffffff;
+  border-top: 3px solid var(--brand-cyan);
+  padding: 1.25rem 2rem;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.cookie-banner h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.cookie-banner p {
+  font-size: 0.9rem;
+  color: var(--text-light-muted);
+}
+
+.cookie-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* 11. Responzivnost */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    height: auto;
+    padding: 1rem;
+    align-items: flex-start;
+  }
+  nav ul {
+    height: auto;
+    flex-wrap: wrap;
+    margin-top: 0.75rem;
+  }
+  nav a {
+    padding: 0.5rem 0.75rem;
+    height: auto;
+  }
+  .hero {
+    padding: 2.5rem 1.5rem;
+  }
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .cookie-banner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
