@@ -1,31 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
 
 :root {
-  /* Meka hladna paleta (umjesto blještave bijele) */
-  --bg-page: #f1f5f9;              /* Ugodna tehnička slate podloga */
-  --bg-surface: #ffffff;           /* Čisti paneli za sadržaj */
-  --bg-surface-subtle: #e2e8f0;    /* Sekundarni elementi i polja */
-  --bg-dark: #0a1322;              /* Duboka tamnoplava za podnožje */
+  /* Stroga enterprise paleta: tamni ugljen, duboki škriljevac i precizna signalno plava */
+  --bg-primary: #0b0f19;
+  --bg-surface: #111827;
+  --bg-surface-elevated: #1a2234;
+  --bg-input: #0e1422;
 
-  /* Brend boje usklađene s novim logotipom */
-  --brand-navy: #0b2545;
-  --brand-blue: #0969da;
-  --brand-cyan: #0099cc;
-  --brand-hover: #0550ae;
+  --accent-primary: #1d4ed8;       /* Duboka industrijska plava */
+  --accent-highlight: #38bdf8;     /* Tehnička plava za detalje i linkove */
+  --accent-border: #1e293b;
 
-  /* Tipografija i tekst */
-  --text-main: #0f172a;
-  --text-body: #334155;
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
   --text-muted: #64748b;
-  --text-light: #ffffff;
-  --text-light-muted: #94a3b8;
 
-  /* Obrubi */
-  --border-color: #cbd5e1;
-  --border-subtle: #e2e8f0;
-
-  --font-sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-mono: 'IBM Plex Mono', Consolas, monospace;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', Consolas, monospace;
 }
 
 * {
@@ -36,8 +27,8 @@
 
 body {
   font-family: var(--font-sans);
-  background-color: var(--bg-page);
-  color: var(--text-main);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
   line-height: 1.6;
   display: flex;
   flex-direction: column;
@@ -45,156 +36,119 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* 1. Header i navigacija */
+/* 1. Header i navigacija - čist, čistokrvan enterprise layout */
 header {
   background-color: var(--bg-surface);
-  border-bottom: 2px solid var(--border-color);
+  border-bottom: 1px solid var(--accent-border);
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
 }
 
 .header-container {
-  max-width: 1240px;
+  max-width: 1200px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 1.5rem;
-  height: 4.2rem;
+  padding: 1rem 1.5rem;
 }
 
 .logo-link {
   display: flex;
   align-items: center;
-  gap: 0.85rem;
+  gap: 0.75rem;
   text-decoration: none;
-  color: var(--brand-navy);
+  color: var(--text-primary);
   font-weight: 700;
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   letter-spacing: -0.3px;
 }
 
-.site-logo {
-  width: 34px;
-  height: 38px;
-  display: block;
-  object-fit: contain;
-}
-
 .logo-link svg {
-  width: 28px;
-  height: 28px;
-  fill: var(--brand-blue);
+  width: 26px;
+  height: 26px;
+  fill: var(--accent-highlight);
 }
 
 .logo-highlight {
-  color: var(--brand-blue);
+  color: var(--accent-highlight);
 }
 
 nav ul {
   display: flex;
   list-style: none;
-  height: 4.2rem;
   gap: 0.25rem;
+  flex-wrap: wrap;
 }
 
 nav a {
-  display: inline-flex;
-  align-items: center;
-  height: 100%;
   text-decoration: none;
-  color: var(--text-body);
-  font-weight: 600;
-  font-size: 0.9rem;
-  padding: 0 1rem;
-  border-bottom: 3px solid transparent;
-  transition: all 0.2s ease;
+  color: var(--text-secondary);
+  font-weight: 500;
+  font-size: 0.88rem;
+  padding: 0.5rem 0.85rem;
+  border-radius: 4px;
+  transition: color 0.15s ease, background-color 0.15s ease;
 }
 
 nav a:hover {
-  color: var(--brand-blue);
-  background-color: rgba(9, 105, 218, 0.05);
+  color: var(--text-primary);
+  background-color: var(--accent-border);
 }
 
 nav a.active {
-  color: var(--brand-blue);
-  border-bottom-color: var(--brand-blue);
-  background-color: rgba(9, 105, 218, 0.06);
+  color: #ffffff;
+  background-color: var(--accent-primary);
 }
 
 /* 2. Glavni raspored */
 main {
   flex: 1;
-  max-width: 1240px;
+  max-width: 1200px;
   width: 100%;
   margin: 0 auto;
   padding: 3rem 1.5rem;
 }
 
 .section-title {
-  font-size: 2.1rem;
+  font-size: 1.85rem;
   font-weight: 700;
-  color: var(--brand-navy);
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
   letter-spacing: -0.5px;
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.section-title::before {
-  content: "";
-  display: inline-block;
-  width: 6px;
-  height: 1.8rem;
-  background-color: var(--brand-blue);
 }
 
 .section-subtitle {
-  color: var(--text-muted);
-  font-size: 1.05rem;
-  margin-top: 0.35rem;
-  margin-bottom: 2.5rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  font-size: 1rem;
 }
 
-/* 3. Hero sekcija - dinamična s mekom plavkastom pozadinom */
+/* 3. Hero sekcija - fokusirana i ozbiljna, bez šarenih balona */
 .hero {
-  background: linear-gradient(135deg, #0b2545 0%, #103460 100%);
-  color: #ffffff;
-  padding: 4rem 3rem;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--accent-border);
+  border-left: 4px solid var(--accent-highlight);
+  border-radius: 4px;
+  padding: 3.5rem 2.5rem;
   margin-bottom: 3.5rem;
-  border-left: 6px solid var(--brand-cyan);
-  box-shadow: 0 10px 25px rgba(11, 37, 69, 0.15);
-  position: relative;
-}
-
-.hero::before {
-  content: "CYBER SECURITY DIVISION";
-  display: block;
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  letter-spacing: 2px;
-  color: var(--brand-cyan);
-  margin-bottom: 1rem;
-  font-weight: 600;
 }
 
 .hero h1 {
-  font-size: 2.7rem;
+  font-size: 2.3rem;
   font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: 1.25rem;
-  letter-spacing: -0.8px;
-  color: #ffffff;
+  line-height: 1.25;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+  letter-spacing: -0.6px;
 }
 
 .hero p {
-  font-size: 1.15rem;
-  line-height: 1.6;
-  color: #cbd5e1;
-  max-width: 780px;
-  margin-bottom: 2rem;
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  max-width: 750px;
+  margin-bottom: 1.75rem;
 }
 
 /* 4. Gumbi */
@@ -202,182 +156,160 @@ main {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.6rem;
-  background-color: var(--brand-blue);
+  background-color: var(--accent-primary);
   color: #ffffff;
-  padding: 0.85rem 1.6rem;
-  font-family: var(--font-sans);
+  padding: 0.65rem 1.35rem;
   font-weight: 600;
-  font-size: 0.92rem;
-  border: none;
+  font-size: 0.9rem;
+  border-radius: 4px;
   text-decoration: none;
+  border: 1px solid transparent;
   cursor: pointer;
-  box-shadow: 0 4px 12px rgba(9, 105, 218, 0.25);
-  transition: all 0.2s ease;
-}
-
-.btn::after {
-  content: "→";
-  font-family: var(--font-mono);
-  font-weight: bold;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
 }
 
 .btn:hover {
-  background-color: var(--brand-hover);
-  box-shadow: 0 6px 16px rgba(9, 105, 218, 0.35);
-  transform: translateY(-1px);
+  background-color: #1e40af;
+  border-color: var(--accent-highlight);
 }
 
-/* 5. Kartice - čisti bijeli paneli na slate pozadini s plavim vrhom */
+/* 5. Kartice - ravni rubovi i precizni obrubi */
 .grid-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 1.5rem;
-  margin-bottom: 3.5rem;
+  gap: 1.25rem;
+  margin-bottom: 3rem;
 }
 
 .card {
   background-color: var(--bg-surface);
-  border: 1px solid var(--border-color);
-  border-top: 3px solid var(--brand-blue);
-  padding: 2.25rem 2rem;
-  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-top-color 0.2s ease;
-  display: flex;
-  flex-direction: column;
+  border: 1px solid var(--accent-border);
+  border-radius: 4px;
+  padding: 1.75rem;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
 }
 
 .card:hover {
-  transform: translateY(-3px);
-  border-top-color: var(--brand-cyan);
-  box-shadow: 0 10px 20px rgba(15, 23, 42, 0.08);
+  border-color: var(--text-muted);
+  background-color: var(--bg-surface-elevated);
 }
 
 .card h3 {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: var(--brand-navy);
-  margin-bottom: 0.75rem;
+  color: var(--text-primary);
+  margin-bottom: 0.65rem;
+  font-size: 1.15rem;
+  font-weight: 600;
 }
 
 .card p {
-  color: var(--text-body);
-  font-size: 0.95rem;
-  line-height: 1.65;
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  line-height: 1.55;
 }
 
 .card small {
   font-family: var(--font-mono);
-  font-size: 0.78rem;
-  color: var(--brand-blue) !important;
-  font-weight: 600;
+  font-size: 0.8rem;
+  color: var(--accent-highlight) !important;
 }
 
 /* 6. Forme */
 .form-section {
   background-color: var(--bg-surface);
-  border: 1px solid var(--border-color);
-  border-left: 4px solid var(--brand-navy);
-  padding: 2.75rem 2.25rem;
-  margin-bottom: 3.5rem;
-  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
+  border: 1px solid var(--accent-border);
+  border-radius: 4px;
+  padding: 2.25rem;
+  margin-bottom: 3rem;
 }
 
 .contact-form {
   display: grid;
-  gap: 1.25rem;
-  max-width: 650px;
+  gap: 1rem;
+  max-width: 620px;
 }
 
 .form-group {
   display: flex;
   flex-direction: column;
-  gap: 0.45rem;
+  gap: 0.35rem;
 }
 
 .form-group label {
   font-size: 0.85rem;
   font-weight: 600;
-  color: var(--brand-navy);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  font-family: var(--font-mono);
+  color: var(--text-secondary);
 }
 
 .form-group input,
 .form-group textarea,
 .form-group select {
-  background-color: #f8fafc;
-  border: 1px solid var(--border-color);
-  border-bottom: 2px solid var(--brand-navy);
-  padding: 0.85rem 1rem;
-  color: var(--text-main);
-  font-family: var(--font-sans);
-  font-size: 0.95rem;
-  transition: all 0.2s ease;
+  background-color: var(--bg-input);
+  border: 1px solid var(--accent-border);
+  border-radius: 4px;
+  padding: 0.7rem 0.9rem;
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 0.92rem;
+  transition: border-color 0.15s ease;
 }
 
 .form-group input:focus,
 .form-group textarea:focus,
 .form-group select:focus {
   outline: none;
-  background-color: #ffffff;
-  border-color: var(--brand-blue);
-  border-bottom-color: var(--brand-blue);
-  box-shadow: 0 0 0 3px rgba(9, 105, 218, 0.12);
+  border-color: var(--accent-highlight);
 }
 
 /* 7. Cjenik kartice */
 .price-card {
-  border-top: 4px solid var(--brand-navy);
-}
-
-.price-card:hover {
-  border-top-color: var(--brand-blue);
+  border-top: 3px solid var(--accent-highlight);
+  display: flex;
+  flex-direction: column;
 }
 
 .price-tag {
-  font-size: 2.3rem;
+  font-size: 2rem;
   font-weight: 700;
-  color: var(--brand-navy);
-  margin: 1.25rem 0;
+  color: var(--text-primary);
+  margin: 1rem 0;
   font-family: var(--font-mono);
 }
 
 .price-card ul {
   list-style: none;
-  margin: 1.5rem 0 2rem;
+  margin: 1.25rem 0 1.75rem;
+  text-align: left;
   flex: 1;
 }
 
 .price-card li {
-  padding: 0.6rem 0;
-  border-bottom: 1px solid var(--border-subtle);
-  color: var(--text-body);
-  font-size: 0.9rem;
+  padding: 0.45rem 0;
+  border-bottom: 1px solid var(--accent-border);
+  color: var(--text-secondary);
+  font-size: 0.88rem;
   display: flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.5rem;
 }
 
 .price-card li::before {
-  content: "✔";
-  color: var(--brand-blue);
-  font-size: 0.85rem;
+  content: "→";
+  color: var(--accent-highlight);
+  font-family: var(--font-mono);
 }
 
 /* 8. Karta */
 .map-container,
 .footer-map-container {
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--accent-border);
+  border-radius: 4px;
   overflow: hidden;
   margin-top: 0.75rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
 .map-container iframe {
   width: 100% !important;
-  height: 380px !important;
+  height: 360px !important;
   display: block;
 }
 
@@ -387,148 +319,123 @@ main {
   display: block;
 }
 
-/* 9. Podnožje - tamnoplavo, autoritativno */
+/* 9. Podnožje */
 footer {
-  background-color: var(--bg-dark);
-  color: var(--text-light);
-  padding: 4rem 1.5rem 2rem;
+  background-color: var(--bg-surface);
+  border-top: 1px solid var(--accent-border);
+  padding: 3rem 1.5rem 1.5rem;
   margin-top: auto;
-  border-top: 3px solid var(--brand-blue);
 }
 
 .footer-container {
-  max-width: 1240px;
+  max-width: 1200px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 3rem;
-  margin-bottom: 3rem;
+  gap: 2rem;
+  margin-bottom: 2rem;
 }
 
 .footer-col h4 {
-  color: #ffffff;
-  font-size: 0.9rem;
+  color: var(--text-primary);
+  margin-bottom: 0.85rem;
+  font-size: 0.95rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  font-family: var(--font-mono);
-  margin-bottom: 1.25rem;
+  letter-spacing: 0.5px;
 }
 
 .footer-col p,
 .footer-col a {
-  color: var(--text-light-muted);
-  font-size: 0.9rem;
+  color: var(--text-secondary);
+  font-size: 0.88rem;
   text-decoration: none;
   line-height: 1.8;
-  transition: color 0.15s ease;
 }
 
 .footer-col a:hover {
-  color: var(--brand-cyan);
+  color: var(--accent-highlight);
   text-decoration: underline;
 }
 
 .newsletter-form {
   display: flex;
-  gap: 0;
-  margin-top: 1rem;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
 }
 
 .newsletter-form input {
-  background-color: #162438;
-  border: 1px solid #2a3c58;
-  padding: 0.75rem 1rem;
-  color: #ffffff;
+  background-color: var(--bg-input);
+  border: 1px solid var(--accent-border);
+  border-radius: 4px;
+  padding: 0.6rem 0.75rem;
+  color: var(--text-primary);
   flex: 1;
-  font-size: 0.9rem;
+  font-size: 0.88rem;
 }
 
 .newsletter-form input:focus {
   outline: none;
-  border-color: var(--brand-cyan);
-}
-
-.newsletter-form .btn {
-  padding: 0.75rem 1.25rem;
-  box-shadow: none;
+  border-color: var(--accent-highlight);
 }
 
 .footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding-top: 1.5rem;
-  text-align: left;
-  max-width: 1240px;
-  margin: 0 auto;
+  border-top: 1px solid var(--accent-border);
+  padding-top: 1.25rem;
+  text-align: center;
   font-size: 0.8rem;
-  color: var(--text-light-muted);
+  color: var(--text-muted);
   font-family: var(--font-mono);
 }
 
-/* 10. Obavijest o kolačićima */
+/* 10. Kolačići */
 .cookie-banner {
   position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  max-width: 100%;
-  background-color: var(--bg-dark);
-  color: #ffffff;
-  border-top: 3px solid var(--brand-cyan);
-  padding: 1.25rem 2rem;
+  bottom: 1.25rem;
+  right: 1.25rem;
+  max-width: 420px;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--accent-border);
+  border-left: 3px solid var(--accent-highlight);
+  padding: 1.25rem;
+  border-radius: 4px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   z-index: 1000;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1.5rem;
-  box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.25);
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
 .cookie-banner h4 {
-  font-size: 1rem;
-  font-weight: 700;
-  color: #ffffff;
+  font-size: 0.95rem;
+  color: var(--text-primary);
 }
 
 .cookie-banner p {
-  font-size: 0.9rem;
-  color: var(--text-light-muted);
+  font-size: 0.85rem;
+  color: var(--text-secondary);
 }
 
 .cookie-actions {
   display: flex;
-  gap: 0.5rem;
+  justify-content: flex-end;
 }
 
 .hidden {
   display: none !important;
 }
 
-/* 11. Responzivnost */
+/* Responzivnost */
 @media (max-width: 768px) {
   .header-container {
     flex-direction: column;
-    height: auto;
-    padding: 1rem;
     align-items: flex-start;
-  }
-  nav ul {
-    height: auto;
-    flex-wrap: wrap;
-    margin-top: 0.75rem;
-  }
-  nav a {
-    padding: 0.5rem 0.75rem;
-    height: auto;
+    gap: 1rem;
   }
   .hero {
-    padding: 2.5rem 1.5rem;
+    padding: 2rem 1.25rem;
   }
   .hero h1 {
-    font-size: 2rem;
-  }
-  .cookie-banner {
-    flex-direction: column;
-    align-items: flex-start;
+    font-size: 1.75rem;
   }
 }

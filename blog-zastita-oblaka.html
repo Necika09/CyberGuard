@@ -1,0 +1,307 @@
+<!doctype html>
+<!-- TSD-4RT | IN | 22.09.2026. -->
+<html lang="hr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>5 ključnih postavki za zaštitu oblaka | CyberGuard Blog</title>
+    <link rel="icon" type="image/svg+xml" href="img/cyberguard-logo.svg" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Zaglavlje -->
+    <header>
+      <div class="header-container">
+        <a href="index.html" class="logo-link">
+          <img
+            src="img/cyberguard-logo.svg"
+            alt="CyberGuard Logo"
+            class="site-logo"
+          />
+          <span>Cyber<span class="logo-highlight">Guard</span></span>
+        </a>
+        <button
+          class="menu-toggle"
+          id="menu-toggle"
+          aria-label="Otvori navigaciju"
+        >
+          ☰
+        </button>
+        <nav id="main-nav">
+          <ul>
+            <li><a href="o-nama.html">O nama</a></li>
+            <li><a href="strucnjaci.html">Zaposleni stručnjaci</a></li>
+            <li>
+              <a href="novosti.html" class="active"
+                >Novosti i blogovi stručnjaka</a
+              >
+            </li>
+            <li><a href="misija-vizija.html">Misija i vizija tvrtke</a></li>
+            <li><a href="cjenik.html">Cjenovnik usluga</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <p style="margin-bottom: 1.5rem">
+        <a
+          href="novosti.html"
+          style="
+            color: var(--brand-blue);
+            text-decoration: none;
+            font-weight: 600;
+          "
+          >← Povratak na sve novosti</a
+        >
+      </p>
+
+      <article class="card" style="margin-bottom: 3rem; padding: 2.5rem">
+        <p
+          style="
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            color: var(--brand-blue);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+          "
+        >
+          Objavljeno: 15. kolovoza 2026. | Kategorija: Sigurnost u oblaku (Cloud
+          Security)
+        </p>
+        <h1
+          style="
+            font-size: 2.3rem;
+            color: var(--brand-navy);
+            margin-bottom: 1rem;
+            line-height: 1.3;
+          "
+        >
+          5 ključnih postavki za zaštitu poslužitelja u oblaku
+        </h1>
+
+        <img
+          src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1200&q=80"
+          alt="Infrastruktura poslužitelja u oblaku i podatkovni centar visoke dostupnosti"
+          class="article-hero-img"
+        />
+
+        <div
+          style="
+            background-color: var(--bg-page);
+            padding: 1rem 1.5rem;
+            border-left: 4px solid var(--brand-blue);
+            margin-bottom: 2rem;
+          "
+        >
+          <strong>Autor:</strong> Luka Novak (Arhitekt mrežne sigurnosti)
+        </div>
+
+        <div
+          style="
+            color: var(--text-body);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+          "
+        >
+          <p>
+            Migracija poslovanja na poslužitelje u oblaku (AWS, Azure, Google
+            Cloud) donosi skalabilnost, ali stvara i novu površinu za napade. U
+            praksi većina curenja podataka ne nastaje zbog grešaka samog
+            pružatelja usluga, već zbog pogrešnih sigurnosnih postavki
+            korisnika.
+          </p>
+
+          <h3
+            style="
+              color: var(--brand-navy);
+              font-size: 1.35rem;
+              margin-top: 1rem;
+            "
+          >
+            1. Princip najmanjih privilegija (Principle of Least Privilege)
+          </h3>
+          <p>
+            Identitet i pristup (IAM) temelj su cloud sigurnosti. Svakoj ulozi,
+            servisu ili korisniku dodijelite samo one dozvole koje su mu nužno
+            potrebne za obavljanje posla. Izbjegavajte trajne administratorske
+            ovlasti.
+          </p>
+
+          <h3
+            style="
+              color: var(--brand-navy);
+              font-size: 1.35rem;
+              margin-top: 1rem;
+            "
+          >
+            2. Blokiranje javnog pristupa spremnicima podataka
+          </h3>
+          <p>
+            Javno otvoreni S3 / Blob spremnici i dalje su jedan od najčešćih
+            uzroka masovnog curenja podataka. Uvijek uključite globalno pravilo
+            <em>Block Public Access</em> na razini cijelog računa.
+          </p>
+
+          <h3
+            style="
+              color: var(--brand-navy);
+              font-size: 1.35rem;
+              margin-top: 1rem;
+            "
+          >
+            3. Enkripcija u mirovanju i u prijenosu
+          </h3>
+          <p>
+            Aktivirajte automatsku enkripciju svih pohranjenih volumena podataka
+            koristeći prilagođene ključeve (KMS), uz obavezno forsiranje HTTPS /
+            TLS 1.3 protokola za svu mrežnu komunikaciju.
+          </p>
+
+          <h3
+            style="
+              color: var(--brand-navy);
+              font-size: 1.35rem;
+              margin-top: 1rem;
+            "
+          >
+            4. Centralizirano bilježenje događaja (Audit Logging)
+          </h3>
+          <p>
+            Zapisnici aktivnosti (npr. AWS CloudTrail ili Azure Monitor) moraju
+            biti uključeni u svim regijama i zaštićeni od brisanja. Bez audit
+            zapisa nemoguće je provesti forenziku nakon upada.
+          </p>
+
+          <h3
+            style="
+              color: var(--brand-navy);
+              font-size: 1.35rem;
+              margin-top: 1rem;
+            "
+          >
+            5. Segmentacija mreže i virtualni vatrozidi
+          </h3>
+          <p>
+            Razdvojite baze podataka, aplikacijske poslužitelje i javne servise
+            u zasebne podmreže (Subnets). Pristup bazama podataka nikada ne
+            smije biti moguć izravno s javnog interneta.
+          </p>
+        </div>
+      </article>
+
+      <!-- Kontakt forma prije podnožja -->
+      <section class="form-section">
+        <h2 class="section-title">
+          Zatražite reviziju vaše infrastrukture u oblaku
+        </h2>
+        <p class="section-subtitle">
+          Pregledat ćemo konfiguraciju vaših AWS, Azure ili GCP resursa i
+          otkriti propuste.
+        </p>
+        <form class="contact-form">
+          <div class="form-group">
+            <label for="name">Ime i prezime:</label>
+            <input type="text" id="name" required placeholder="Vaše ime" />
+          </div>
+          <div class="form-group">
+            <label for="email">Poslovni email:</label>
+            <input
+              type="email"
+              id="email"
+              required
+              placeholder="adresa@tvrtka.hr"
+            />
+          </div>
+          <div class="form-group">
+            <label for="message">Korištena cloud platforma i opseg:</label>
+            <textarea
+              id="message"
+              rows="3"
+              required
+              placeholder="AWS, Azure, GCP ili privatni oblak..."
+            ></textarea>
+          </div>
+          <button type="submit" class="btn">Zatraži reviziju</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-col">
+          <h4>CyberGuard Solutions</h4>
+          <p>
+            Vodeća tvrtka za kibernetičku sigurnost i zaštitu digitalne imovine.
+          </p>
+          <p style="margin-top: 0.5rem">
+            <strong>Adresa:</strong> Gundulićeva 14, 43500 Daruvar (Tehnička
+            škola Daruvar)
+          </p>
+          <div class="footer-map-container">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2791.671725464257!2d17.21841251270514!3d45.597143570955886!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476798b3c16f69d3%3A0x9ad0d9698a09a02!2sTehni%C4%8Dka%20%C5%A1kola%20Daruvar!5e0!3m2!1shr!2shr!4v1789415130025!5m2!1shr!2shr"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"
+            ></iframe>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Društvene mreže</h4>
+          <p>
+            <a
+              href="https://www.instagram.com/tsd_daruvar/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >📷 Instagram: @tsd_daruvar</a
+            >
+          </p>
+          <p>
+            <a
+              href="https://www.facebook.com/tsdaruvar/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >📘 Facebook: Tehnička škola Daruvar</a
+            >
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Newsletter</h4>
+          <p>
+            Pretplatite se na mjesečni sigurnosni bilten i analize prijetnji:
+          </p>
+          <form action="https://formspree.io/f/xgavklve" method="POST">
+            <label>
+              Email:
+              <input type="email" name="email" required />
+            </label>
+            <button type="submit" class="btn">Prijava</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 CyberGuard Solutions d.o.o. Sva prava pridržana.</p>
+      </div>
+    </footer>
+
+    <aside id="cookie-banner" class="cookie-banner">
+      <h4>Obavijest o kolačićima</h4>
+      <p>
+        Ova stranica koristi nužne kolačiće za optimalno korisničko iskustvo.
+      </p>
+      <div class="cookie-actions">
+        <button id="accept-cookies" class="btn">Prihvaćam</button>
+      </div>
+    </aside>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
